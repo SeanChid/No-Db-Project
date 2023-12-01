@@ -6,6 +6,7 @@ const AddButton = (props) => {
 
     return (
         <div>
+            <div></div>
             <button onClick={addEntry}>Add</button>
         </div>
     )

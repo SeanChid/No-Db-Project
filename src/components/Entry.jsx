@@ -7,15 +7,31 @@ import { useState } from 'react'
 import axios from "axios"
 
 const Entry = (props) => {
-    const {initalEntryData, initialEditMode, deleteEntry, currentData, setCurrentData} = props
+    const {initialEntryData, initialEditMode, deleteEntry, currentData, setCurrentData} = props
 
     const [editMode, setIsEditing] = useState(initialEditMode)
-    const [name, setName] = useState(initalEntryData.name)
-    const [seatClass, setSeatClass] = useState(initalEntryData.seatClass)
-    const [seat, setSeat] = useState(initalEntryData.seat)
+    const [name, setName] = useState(initialEntryData.name)
+    const [seatClass, setSeatClass] = useState(initialEntryData.seatClass)
+    const [seat, setSeat] = useState(initialEntryData.seat)
 
     const changeEditMode = () => setIsEditing(true)
-    const changeNormalMode = () => setIsEditing(false)
+    const changeNormalMode = () => {
+
+        const bodyObj = {
+            name,
+            seatClass,
+            seat
+        }
+
+        axios.put(`/passenger/${initialEntryData.id}`, bodyObj)
+        .then((res) => {
+            console.log(res.data)
+            setCurrentData(res.data)
+            setIsEditing(false)
+        }).catch((theseHands) => {
+            console.log(theseHands)
+        })
+    }
 
     return (
         <div>
@@ -30,7 +46,7 @@ const Entry = (props) => {
                 value={name}
                 setName={setName}
             />
-            <seatClass
+            <SeatClass
                 isEditing={editMode}
                 value={seatClass}
                 setSeatClass={setSeatClass}
