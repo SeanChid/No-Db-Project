@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "name":"James",
+        "seatClass":"First",
+        "seat":"1A"
+    },
+    {
+        "id": 1,
+        "name":"Charolette",
+        "seatClass":"Economy",
+        "seat":"8D"
+    },
+    {
+        "id": 2,
+        "name":"Charlie",
+        "seatClass":"Economy",
+        "seat":"10B"
+    },
+    {
+        "id": 3,
+        "name":"Sarah",
+        "seatClass":"First",
+        "seat":"4F"
+    }
+]
