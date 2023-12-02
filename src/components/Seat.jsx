@@ -7,9 +7,9 @@ const Seat = (props) => {
     return isEditing? (
         <div>
             <input
-            type='text'
-            value={value}
-            onChange={(e) => setSeat(e.target.value)}
+                type='text'
+                value={value}
+                onChange={(e) => setSeat(e.target.value)}
             />
         </div>
     ) : (

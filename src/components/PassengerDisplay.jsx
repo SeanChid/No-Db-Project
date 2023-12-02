@@ -21,7 +21,7 @@ const PassengerDisplay = () => {
 
     }, [])
 
-    const addRow = () => {
+    const addEntry = () => {
 
         axios.post('/passenger', {name: 'Enter Name'})
         .then((res) => {
@@ -34,20 +34,31 @@ const PassengerDisplay = () => {
 
     }
 
+    const deleteEntry = (id) => {
+
+        axios.delete(`/passenger/${id}`)
+        .then((res) => {
+            setCurrentData(res.data)
+        })
+        .catch((theseHands) => {
+            console.log(theseHands)
+        })
+
+    }
+
     const row = currentData.map((el) => <Entry
         initialEntryData={el}
         initialEditMode={false}
         key={el.id}
-        deleteEntry={() => deleteRow(el.id)}
+        deleteEntry={() => deleteEntry(el.id)}
         currentData={currentData}
         setCurrentData={setCurrentData}
     />)
 
     return (
         <div>
-            <Label />
-            {row}
-            <AddButton addEntry={addRow}/>
+            <Label entry={row}/>
+            <AddButton addEntry={addEntry}/>
         </div>
     )
 }

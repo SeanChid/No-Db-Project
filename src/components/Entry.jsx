@@ -35,12 +35,6 @@ const Entry = (props) => {
 
     return (
         <div>
-            <ModeButtons
-                isEditing={editMode}
-                changeEditMode={changeEditMode}
-                changeNormalMode={changeNormalMode}
-                deleteEntry={deleteEntry}
-            />
             <Name
                 isEditing={editMode}
                 value={name}
@@ -55,6 +49,12 @@ const Entry = (props) => {
                 isEditing={editMode}
                 value={seat}
                 setSeat={setSeat}
+            />
+            <ModeButtons
+                isEditing={editMode}
+                changeEditMode={changeEditMode}
+                changeNormalMode={changeNormalMode}
+                deleteEntry={deleteEntry}
             />
         </div>
     )
