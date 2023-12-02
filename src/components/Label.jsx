@@ -6,7 +6,8 @@ const Label = (props) => {
 
     return (
         <div id='passenger'>
-            <h3>Passengers: {entry}</h3>
+            <h3>Passengers: </h3>
+            {entry}
         </div>
     )
 }

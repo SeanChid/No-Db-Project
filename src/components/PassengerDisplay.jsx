@@ -58,6 +58,7 @@ const PassengerDisplay = () => {
     return (
         <div>
             <Label entry={row}/>
+            <br/>
             <AddButton addEntry={addEntry}/>
         </div>
     )
