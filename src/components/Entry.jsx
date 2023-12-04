@@ -34,11 +34,12 @@ const Entry = (props) => {
     }
 
     return (
-        <div>
+        <div className='passenger-entry'>
             <Name
                 isEditing={editMode}
                 value={name}
                 setName={setName}
+
             />
             <SeatClass
                 isEditing={editMode}
