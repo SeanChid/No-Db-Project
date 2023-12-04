@@ -7,7 +7,7 @@ import { useState } from 'react'
 import axios from "axios"
 
 const Entry = (props) => {
-    const {initialEntryData, initialEditMode, deleteEntry, currentData, setCurrentData} = props
+    const {initialEntryData, initialEditMode, deleteEntry, setCurrentData} = props
 
     const [editMode, setIsEditing] = useState(initialEditMode)
     const [name, setName] = useState(initialEntryData.name)
@@ -34,7 +34,7 @@ const Entry = (props) => {
     }
 
     return (
-        <div className='passenger-entry'>
+        <div>
             <Name
                 isEditing={editMode}
                 value={name}

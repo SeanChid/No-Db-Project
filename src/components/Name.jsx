@@ -6,14 +6,16 @@ const Name = (props) => {
 
     return isEditing? (
         <div>
+            <label>Enter Name: </label>
             <input
-            type='text'
-            value={value}
-            onChange={(e) => setName(e.target.value)}
+                type='text'
+                value={value}
+                onChange={(e) => setName(e.target.value)}
             />
         </div>
     ) : (
         <div>
+            <label>Name: </label>
             {value}
         </div>
     )

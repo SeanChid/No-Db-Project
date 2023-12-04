@@ -23,7 +23,7 @@ const PassengerDisplay = () => {
 
     const addEntry = () => {
 
-        axios.post('/passenger', {name: 'Enter Name'})
+        axios.post('/passenger')
         .then((res) => {
             console.log(res.data)
             setCurrentData(res.data)

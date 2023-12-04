@@ -5,7 +5,7 @@ const Label = (props) => {
     const {entry} = props
 
     return (
-        <div className='passenger-entry'>
+        <div>
             <h3>Passengers: </h3>
             {entry}
         </div>

@@ -6,6 +6,7 @@ const SeatClass = (props) => {
 
     return isEditing? (
         <div>
+            <label>Enter Class: </label>
             <input
                 type='text'
                 value={value}
@@ -14,6 +15,7 @@ const SeatClass = (props) => {
         </div>
     ) : (
         <div>
+            <label>Class: </label>
             {value}
         </div>
     )
